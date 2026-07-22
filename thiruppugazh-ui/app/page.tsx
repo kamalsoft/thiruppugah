@@ -8,6 +8,7 @@ import Sidebar, { TabType } from './components/Sidebar';
 import HeroBanner from './components/HeroBanner';
 import SongsSearch from './components/SongsSearch';
 import PlacesDirectory from './components/PlacesDirectory';
+import PlacesMap from './components/PlacesMap';
 import SongModal from './components/SongModal';
 
 const FONT_SIZES = [14, 16, 18, 20, 22];
@@ -212,6 +213,16 @@ export default function LandingPage() {
                   setSelectedPlace(placeName);
                   setActiveTab('thiruppugazh');
                 }}
+              />
+            </div>
+          )}
+
+          {/* TAB 5: PLACES MAP */}
+          {activeTab === 'map' && (
+            <div className="space-y-8 animate-fade-in">
+              <PlacesMap
+                places={places}
+                loading={placesLoading}
               />
             </div>
           )}

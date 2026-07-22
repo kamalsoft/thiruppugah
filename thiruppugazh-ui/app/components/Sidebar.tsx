@@ -6,7 +6,7 @@ import PeacockFeatherIcon from './icons/PeacockFeatherIcon';
 import AgalVilakkuIcon from './icons/AgalVilakkuIcon';
 import { Constants } from '@/app/constants/images';
 
-export type TabType = 'overview' | 'arunagirinathar' | 'thiruppugazh' | 'places';
+export type TabType = 'overview' | 'arunagirinathar' | 'thiruppugazh' | 'places' | 'map';
 
 interface Props {
     sidebarOpen: boolean;
@@ -79,6 +79,15 @@ export default function Sidebar({ sidebarOpen, activeTab, totalSongs, onSelectTa
                                 className="w-5 h-5 rounded-full object-cover border border-amber-400"
                             />
                             <span>புண்ணியத் தலங்கள் (Sacred Abodes)</span>
+                        </button>
+
+                        <button
+                            onClick={() => handleTabClick('map')}
+                            className={`w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition ${activeTab === 'map' ? 'bg-[#8B1A1A] text-amber-100 shadow-md' : 'hover:bg-[#EAD6B5] text-stone-800'
+                                }`}
+                        >
+                            <span className="text-base leading-none">📍</span>
+                            <span>வரைபடம் (Places Map)</span>
                         </button>
                     </nav>
                 </div>
