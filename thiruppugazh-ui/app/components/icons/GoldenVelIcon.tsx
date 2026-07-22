@@ -1,0 +1,30 @@
+import React from 'react';
+
+export default function GoldenVelIcon({ className = "w-8 h-8" }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            <path
+                d="M50 8 C30 25 22 45 22 58 C22 72 35 80 47 80 V92 C47 93.5 48.5 95 50 95 C51.5 95 53 93.5 53 92 V80 C65 80 78 72 78 58 C78 45 70 25 50 8 Z"
+                fill="url(#goldGrad)"
+                stroke="#8B5A2B"
+                strokeWidth="2"
+            />
+            <path
+                d="M50 14 C35 28 28 45 28 56 C28 67 38 73 47 74 V80 H53 V74 C62 73 72 67 72 56 C72 45 65 28 50 14 Z"
+                fill="#FFE57F"
+                opacity="0.5"
+            />
+            <rect x="36" y="46" width="28" height="3" rx="1.5" fill="#FFFFFF" />
+            <rect x="36" y="51" width="28" height="3" rx="1.5" fill="#FFFFFF" />
+            <rect x="36" y="56" width="28" height="3" rx="1.5" fill="#FFFFFF" />
+            <circle cx="50" cy="52.5" r="3" fill="#B22222" />
+            <defs>
+                <linearGradient id="goldGrad" x1="22" y1="8" x2="78" y2="95" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#FFD700" />
+                    <stop offset="0.5" stopColor="#D4AF37" />
+                    <stop offset="1" stopColor="#B8860B" />
+                </linearGradient>
+            </defs>
+        </svg>
+    );
+}
