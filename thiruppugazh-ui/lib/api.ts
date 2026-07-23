@@ -1,5 +1,23 @@
+/*
+api.ts
+*/
+
 import { API_CONFIG } from './config';
 import { PaginatedResponse, SongDetail, PlaceMapping } from './types';
+
+type SongSearchParams = {
+  q?: string;
+  place?: string;
+  raga?: string;
+  thala?: string;
+  chandam?: string;
+  category?: string;
+  language?: string;
+  composer?: string;
+  number?: string | number;
+  page?: number;
+  limit?: number;
+};
 
 /**
  * Generic helper function to handle API requests and response errors
@@ -27,28 +45,30 @@ async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise
   }
 }
 
+const appendIfValue = (query: URLSearchParams, key: string, value: unknown) => {
+  if (value !== undefined && value !== null && String(value).trim() !== '') {
+    query.append(key, String(value).trim());
+  }
+};
+
 /**
  * Fetch songs with search and filter parameters
  */
-export async function fetchSongs(params: {
-  q?: string;
-  place?: string;
-  raga?: string;
-  thala?: string;
-  chandam?: string;
-  page?: number;
-  limit?: number;
-}): Promise<PaginatedResponse> {
+export async function fetchSongs(params: SongSearchParams = {}): Promise<PaginatedResponse> {
   const query = new URLSearchParams();
 
-  if (params.q) query.append('q', params.q);
-  if (params.place) query.append('place', params.place);
-  if (params.raga) query.append('raga', params.raga);
-  if (params.thala) query.append('thala', params.thala);
-  if (params.chandam) query.append('chandam', params.chandam);
+  appendIfValue(query, 'q', params.q);
+  appendIfValue(query, 'place', params.place);
+  appendIfValue(query, 'raga', params.raga);
+  appendIfValue(query, 'thala', params.thala);
+  appendIfValue(query, 'chandam', params.chandam);
+  appendIfValue(query, 'category', params.category);
+  appendIfValue(query, 'language', params.language);
+  appendIfValue(query, 'composer', params.composer);
+  appendIfValue(query, 'number', params.number);
 
-  query.append('page', (params.page || 1).toString());
-  query.append('limit', (params.limit || API_CONFIG.DEFAULT_LIMIT).toString());
+  query.append('page', String(params.page || 1));
+  query.append('limit', String(params.limit || API_CONFIG.DEFAULT_LIMIT));
 
   return apiFetch<PaginatedResponse>(`/songs?${query.toString()}`);
 }
