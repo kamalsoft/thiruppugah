@@ -16,17 +16,13 @@ export default function HeroBanner() {
             <div className="bg-gradient-to-r from-[#8B1A1A] via-[#990000] to-[#8B1A1A] rounded-2xl p-4 text-center border-2 border-[#D4AF37] shadow-sm flex items-center justify-center gap-3">
                 {/* Vel 1 — glow + sway, starts immediately */}
                 <GoldenVelIcon
-                    className="w-5 h-5 shrink-0 animate-vel-glow animate-vel-sway"
-                    style={{ animationDelay: '0s, 0s' } as React.CSSProperties}
-                />
+                    className="w-5 h-5 shrink-0 animate-vel-glow animate-vel-sway" />
                 <span className="text-amber-300 text-sm sm:text-base font-bold font-serif tracking-wide drop-shadow-xs">
                     ✨ திருப்புகழைப் பாடப் பாட வாய் மணக்கும் ✨
                 </span>
                 {/* Vel 2 — same glow, sway offset so they alternate */}
                 <GoldenVelIcon
-                    className="w-5 h-5 shrink-0 animate-vel-glow animate-vel-sway"
-                    style={{ animationDelay: '1.25s, 0.8s' } as React.CSSProperties}
-                />
+                    className="w-5 h-5 shrink-0 animate-vel-glow animate-vel-sway" />
             </div>
 
             {/* Hero Image Frame with float + shimmer animation */}
@@ -120,10 +116,7 @@ export default function HeroBanner() {
                 {/* Card 1: Vel — glow + sway */}
                 <div className="bg-[#FFFDF7] border-2 border-[#E3C896] hover:border-[#8B1A1A] rounded-2xl p-6 text-center space-y-3 transition shadow-2xs hover:shadow-xs">
                     <div className="flex justify-center">
-                        <GoldenVelIcon
-                            className="w-10 h-10 animate-vel-glow animate-vel-sway"
-                            style={{ animationDelay: '0.4s, 0.4s' } as React.CSSProperties}
-                        />
+                        <GoldenVelIcon className="w-10 h-10 animate-vel-glow animate-vel-sway" />
                     </div>
                     <h3 className="text-base font-bold font-serif text-[#7A0000]">
                         சந்தக் கவி
@@ -137,9 +130,7 @@ export default function HeroBanner() {
                 <div className="bg-[#FFFDF7] border-2 border-[#E3C896] hover:border-[#8B1A1A] rounded-2xl p-6 text-center space-y-3 transition shadow-2xs hover:shadow-xs">
                     <div className="flex justify-center">
                         <PeacockFeatherIcon
-                            className="w-10 h-10 animate-icon-levitate"
-                            style={{ animationDelay: '0.6s' } as React.CSSProperties}
-                        />
+                            className="w-10 h-10 animate-icon-levitate" />
                     </div>
                     <h3 className="text-base font-bold font-serif text-[#7A0000]">
                         தலங்களின் சிறப்பு
@@ -154,7 +145,6 @@ export default function HeroBanner() {
                     <div className="flex justify-center">
                         <AgalVilakkuIcon
                             className="w-10 h-10 animate-icon-levitate"
-                            style={{ animationDelay: '1.2s' } as React.CSSProperties}
                         />
                     </div>
                     <h3 className="text-base font-bold font-serif text-[#7A0000]">

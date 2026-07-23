@@ -79,7 +79,6 @@ export default function Header({
                 <div className="hidden sm:flex flex-1 justify-center items-center pointer-events-none select-none">
                     <GoldenVelIcon
                         className="w-7 h-7 animate-vel-glow animate-vel-sway"
-                        style={{ animationDelay: '0s, 0s' } as React.CSSProperties}
                     />
                 </div>
 
